@@ -164,8 +164,8 @@ route:
       mqtraffic: false
       hacrrtraffic: false
     loadBalancer:
-      webconsole: false
-      mqtraffic: false
+      webconsole: true
+      mqtraffic: true
       # Additional annotations to be added to the load balancer annotations
       annotations: {}
       loadBalancerSourceRanges: []
@@ -177,7 +177,7 @@ route:
         tls: 
           enable: false 
           secret: 
-      annotations: {}
+      annotations: {cert-manager.io/cluster-issuer: letsencrypt-production,kubernetes.io/ingress.class: nginx}
 
 # log section specifies settings for MQ error logs
 log:

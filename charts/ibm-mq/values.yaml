@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # license must be set to "accept" to accept the terms of the IBM license
-license: "not accepted"
+license: "accept"
 
 image:
   # repository is the container repository to use
@@ -30,7 +30,7 @@ image:
 # set passwords for users: "admin" and "app"
 credentials:
   # enabled is whether to configure user credentials via secret or not. (in MQ /run/secrets directory)
-  enable: false
+  enable: true
   # If enabled, provide the name of the secret that contains your user passwords. See adjacent README.md for instructions on how to create this Secret.
   secret: "mq-credentials"
 
@@ -92,7 +92,7 @@ security:
     seccompProfile:
       type:
   # initVolumeAsRoot specifies whether or not storage provider requires root permissions to initialize
-  initVolumeAsRoot: false
+  initVolumeAsRoot: true
   runAsUser:
   readOnlyRootFilesystem: false
 
@@ -171,7 +171,7 @@ route:
       loadBalancerSourceRanges: []
     ingress:
       webconsole: 
-        enable: false
+        enable: true
         hostname: 
         path: /
         tls: 

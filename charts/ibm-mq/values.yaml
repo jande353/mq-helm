@@ -128,8 +128,8 @@ queueManager:
 #     items:
 #       - <certificate files to import> (for example: tls.key, tls.crt, ca.crt)
 pki:
-  annotations: {cert-manager.io/cluster-issuer: letsencrypt-production,kubernetes.io/ingress.class: nginx}
   keys:
+    annotations: {cert-manager.io/cluster-issuer: letsencrypt-production,kubernetes.io/ingress.class: nginx}
     - name: default
       secret:
         secretName: mq-external-tls-secret
@@ -137,6 +137,7 @@ pki:
           - tls.key
           - tls.crt
   trust:
+    annotations: {cert-manager.io/cluster-issuer: letsencrypt-production,kubernetes.io/ingress.class: nginx}
     - name: trust
       secret:
         secretName: mq-external-tls-secret

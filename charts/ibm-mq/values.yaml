@@ -171,7 +171,7 @@ route:
       loadBalancerSourceRanges: []
     ingress:
       webconsole: 
-        enable: false
+        enable: true
         hostname: 
         path: /
         tls: 

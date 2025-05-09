@@ -167,11 +167,11 @@ route:
       webconsole: true
       mqtraffic: true
       # Additional annotations to be added to the load balancer annotations
-      annotations: {}
+      annotations: {cert-manager.io/cluster-issuer: letsencrypt-production,kubernetes.io/ingress.class: nginx}
       loadBalancerSourceRanges: []
     ingress:
       webconsole: 
-        enable: true
+        enable: false
         hostname: 
         path: /
         tls: 

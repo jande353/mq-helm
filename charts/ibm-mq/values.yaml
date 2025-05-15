@@ -128,8 +128,19 @@ queueManager:
 #     items:
 #       - <certificate files to import> (for example: tls.key, tls.crt, ca.crt)
 pki:
-  keys: []
-  trust: []
+  keys:
+    - name: default
+      secret:
+        secretName: qm1-ibm-mq
+        items:
+          - tls.key
+          - tls.crt
+  trust:
+    - name: trust
+      secret:
+        secretName: qm1-ibm-mq
+        items:
+          - tls.crt
 
 # livenessProbe section specifies setting for the MQ liveness probe, which checks for a running Queue Manager
 livenessProbe:
